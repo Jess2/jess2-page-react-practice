@@ -5,97 +5,105 @@
 
 body {
   margin: 0;
+  background: rgb(248, 248, 248);
 }
 
 .App {
   text-align: center;
-  margin: 0;
+  margin: 0 auto;
+  width: 940px;
+  height: 100%;
+  box-shadow: 0px 0px 10px lightgray;
+  background: white;
 
-  .topHeader {
-    background: linear-gradient(to right, rgb(255, 217, 0) , rgb(255, 179, 0));
-    height: 30px;
-    line-height: 30px;
-    width: calc(100% - 40px);
-    padding: 10px 20px 0 20px;
-    color: white;
-    text-shadow: 2px 2px 2px gray;
+  .header {
+    // position: fixed;
+    // width: 940px;
+    // left: 0;
+    // bottom: 0;
 
-    .lang {
-      float: left;
-    }
-
-    .pdf {
-      float: right;
-    }
-
-    .contact {
-      float: right;
-    }
-  }
-
-  header {
-    width: 100%;
-    height: 100px;
-    padding-bottom: 40px;
-    background: linear-gradient(to right, rgb(255, 217, 0) , rgb(255, 179, 0));
-    display: table;
-
-    div {
-      vertical-align: middle;
-      display: table-cell;
-      line-height: 40px;
-      font-size: 35px;
-      font-weight: 500;
+    .headerTop {
+      background: linear-gradient(to right, rgb(255, 217, 0) , rgb(255, 179, 0));
+      height: 30px;
+      line-height: 30px;
+      width: calc(100% - 40px);
+      padding: 10px 20px 0 20px;
       color: white;
       text-shadow: 2px 2px 2px gray;
-
-      h3 {
-        margin: 0;
+  
+      .lang {
+        float: left;
+      }
+  
+      .contactMe {
+        float: right;
       }
     }
-  }
-
-  nav {
-    height: 50px;
-    line-height: 50px;
-    font-size: 16px;
-
-    table {
+  
+    .headerBody {
       width: 100%;
-      border-bottom: 5px solid rgb(255, 179, 0);
-      color: rgb(255, 179, 0);
-      box-shadow: 0px 3px 3px rgb(197, 197, 197);
-      font-weight: bold;
-      border-collapse: collapse;
-
-      td {
-        transition: .15s all ease-in-out;
-      }
-
-      td:hover {
-        background: rgb(255, 179, 0);
+      height: 60px;
+      padding-bottom: 50px;
+      background: linear-gradient(to right, rgb(255, 217, 0) , rgb(255, 179, 0));
+      display: table;
+  
+      div {
+        vertical-align: middle;
+        display: table-cell;
+        line-height: 30px;
+        font-size: 18px;
+        font-weight: 500;
         color: white;
-        cursor: pointer;
+        text-shadow: 2px 2px 2px gray;
+  
+        h1 {
+          margin: 0;
+        }
       }
-
-      td.active {
-        background: rgb(255, 179, 0);
-        color: white;
+    }
+  
+    nav {
+      height: 50px;
+      line-height: 50px;
+      font-size: 16px;
+  
+      table {
+        width: 100%;
+        border-bottom: 5px solid rgb(255, 179, 0);
+        color: rgb(255, 179, 0);
+        font-weight: bold;
+        border-collapse: collapse;
+  
+        td {
+          transition: .15s all ease-in-out;
+          width: 12.5%;
+        }
+  
+        td:hover {
+          background: rgb(255, 179, 0);
+          color: white;
+          cursor: pointer;
+        }
+  
+        td.active {
+          background: rgb(255, 179, 0);
+          color: white;
+        }
       }
     }
   }
 
-  .body {
-
+  .contents {
+    height: 800px;
   }
 
-  footer {
+  .footer {
     background: black;
     color: white;
-    position: fixed;
-    width: 100%;
-    left: 0;
-    bottom: 0;
+    // position: fixed;
+    // width: 100%;
+    // left: 0;
+    // bottom: 0;
     height: 40px;
     line-height: 40px;
     font-size: 12px;
