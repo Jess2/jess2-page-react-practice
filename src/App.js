@@ -26,7 +26,6 @@ class App extends Component {
   // active 값이 true이면, 새 객체를 만들고 기존의 내용을 집어넣고 원하는 값 덮어쓰기
   // 바꿀 필요 없는 것들은 그냥 기존 값 사용
   setActive = async (e) => {
-    console.log(e.target.id)
     let _id =e.target.id;
     await this.setState({
       isActive: this.state.isActive.map(
