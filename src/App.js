@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.scss';
 import Typing from 'react-typing-animation';
 import About from './components/about/About';
@@ -40,20 +40,14 @@ class App extends Component {
   }
   render() {
     return (
+      <Fragment>
       <div className="App">
+        <a href="#" className="top"><button><i className="fa fa-arrow-up" aria-hidden="true"></i></button></a>
         <div className="header">
-          <div className="headerTop">
-            <span className="lang">
-              KR&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;EN
-            </span>
-            <span className="contactMe">
-              Contact Me
-            </span>
-          </div>
           <div className="headerBody">
             <Typing>
               <span>Frontend Developer</span>
-              <h1>Jess2's Profile</h1>
+              <h1>Jess2's Blog</h1>
               <Typing.Reset count={1} />
             </Typing>
           </div>
@@ -86,10 +80,12 @@ class App extends Component {
           { this.state.isActive[7].active && <Awards/> }
         </div>
 
-        <div className="footer">
-          Copyright Jess2
-        </div>
+        
       </div>
+      <div className="footer">
+        Copyright Jess2
+      </div>
+      </Fragment>
     );
   }
 }

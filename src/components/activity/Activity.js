@@ -6,6 +6,7 @@ export default class Activity extends Component {
     return (
       <div className="Activity">
         Activity
+        
       </div>
     );
   }
