@@ -3,6 +3,7 @@ import './About.scss';
 export default class About extends Component {
   state = {
     // myImageUrl: "../../../assets/image/js.png",
+    myImageUrl: "assets/image/js.png",
     skills: [
       { name: "JavaScript(ES6+)", score: 4 },
       { name: "TypeScript", score: 4 },
@@ -108,7 +109,8 @@ export default class About extends Component {
             <img src={require("../../assets/image/ts.png")}/>
             <img src={require("../../assets/image/vue.png")}/>
             <img src={require("../../assets/image/react.png")}/> */}
-            {/* <img src={this.state.myImageUrl}/> */}
+            {/* <img src={require(this.state.myImageUrl)}/> */}
+            <img src={require("assets/image/js.png")}/>
           </thead>
           <tbody>
             <tr>
@@ -154,18 +156,19 @@ export default class About extends Component {
     return (
       <div className="About">
         <div className="AboutContents">
-          {/* <img src={require("../../assets/image/profile.png")}/> */}
-          {/* <img src={require("../../assets/")}/>> */}
+          <img src={require("assets/image/profile.png")}/>
           <div className="text">
             <h2>정소연(Jess2)</h2>
             <li>1992.12.12</li>
             <li>새로운 기술을 익히는 것에 즐거움을 느끼며 사람들과 소통하는 것을 좋아하는 프론트엔드 개발자입니다.</li>
+            <br/><hr/>
+            <h4>INTERESTS</h4>
             <div className="interestTagsWrapper">
               {interestTags}
             </div>
             <br/><hr/>
 
-            <h4>CONTACT</h4>
+            <h4>CONTACTS</h4>
             <a href="mailto:jess2.jsy@gmail.com" target="_blank"><i className="fa fa-envelope"></i></a>
             <a href="https://www.facebook.com/jesssss2" target="_blank"><i className="fa fa-facebook-square"></i></a>
             <a href="https://www.instagram.com/je_ss2" target="_blank"><i className="fa fa-instagram"></i></a>
