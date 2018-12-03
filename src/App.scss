@@ -139,3 +139,16 @@ html, body {
   width: 940px;
   box-shadow: 0 0 10px gray;
 }
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#svg {
+  height: auto;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: dash 3s 1s infinite;
+}

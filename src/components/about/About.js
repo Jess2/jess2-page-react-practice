@@ -111,7 +111,7 @@ export default class About extends Component {
     works: [
       {
         title: "MAXST",
-        period: "2018. 08 ~ ing",
+        period: "2018-08 ~ ing",
         position: "Frontend Developer",
         description: "소프트웨어 개발팀에서 프론트엔드 개발자로 일하고 있습니다. Vue.js, React.js 등 다양한 프레임워크 및 라이브러리를 이용하고 있으며, 웹 개발 위주의 업무를 맡고 있습니다."
       }
@@ -256,11 +256,11 @@ export default class About extends Component {
             </table>
             <br/><hr/>
 
-            <h4>WORK</h4>
+            <h4>WORK EXPERIENCES</h4>
             {works}
             <hr/>
 
-            <h4>PROJECTS</h4>
+            <h4>PERSONAL PROJECTS</h4>
             {projects}
             <hr/>
 

@@ -2,13 +2,13 @@ import React, { Component, Fragment } from 'react';
 import './App.scss';
 import Typing from 'react-typing-animation';
 import About from './components/about/About';
-import Work from './components/work/Work';
-import Project from './components/project/Project';
-import Blog from './components/blog/Blog';
-import Activity from './components/activity/Activity';
-import Skills from './components/skills/Skills';
-import Education from './components/education/Education';
-import Awards from './components/awards/Awards';
+import JavaScript from './components/es5/JavaScript';
+import ES2015 from './components/es6/ES2015';
+import VueJS from './components/vueJS/VueJS';
+import ReactJS from './components/react/ReactJS';
+import NodeJS from './components/node/NodeJS';
+import MongoDB from './components/mongo/MongoDB';
+import Etc from './components/etc/Etc';
 
 class App extends Component {
   state = {
@@ -55,14 +55,14 @@ class App extends Component {
             <table>
               <tbody>
                 <tr>
-                  <td id="0" onClick={this.setActive} className={`${this.state.isActive[0].active && 'active'}`}>About</td>
-                  <td id="1" onClick={this.setActive} className={`${this.state.isActive[1].active && 'active'}`}>Work</td>
-                  <td id="2" onClick={this.setActive} className={`${this.state.isActive[2].active && 'active'}`}>Project</td>
-                  <td id="3" onClick={this.setActive} className={`${this.state.isActive[3].active && 'active'}`}>Blog</td>
-                  <td id="4" onClick={this.setActive} className={`${this.state.isActive[4].active && 'active'}`}>Activity</td>
-                  <td id="5" onClick={this.setActive} className={`${this.state.isActive[5].active && 'active'}`}>Skills</td>
-                  <td id="6" onClick={this.setActive} className={`${this.state.isActive[6].active && 'active'}`}>Education</td>
-                  <td id="7" onClick={this.setActive} className={`${this.state.isActive[7].active && 'active'}`}>Awards</td>
+                  <td id="0" onClick={this.setActive} className={`${this.state.isActive[0].active && 'active'}`}>Profile</td>
+                  <td id="1" onClick={this.setActive} className={`${this.state.isActive[1].active && 'active'}`}>JavaScript</td>
+                  <td id="2" onClick={this.setActive} className={`${this.state.isActive[2].active && 'active'}`}>ES2015</td>
+                  <td id="3" onClick={this.setActive} className={`${this.state.isActive[3].active && 'active'}`}>Vue.js</td>
+                  <td id="4" onClick={this.setActive} className={`${this.state.isActive[4].active && 'active'}`}>React.js</td>
+                  <td id="5" onClick={this.setActive} className={`${this.state.isActive[5].active && 'active'}`}>Node.js</td>
+                  <td id="6" onClick={this.setActive} className={`${this.state.isActive[6].active && 'active'}`}>MongoDB</td>
+                  <td id="7" onClick={this.setActive} className={`${this.state.isActive[7].active && 'active'}`}>etc.</td>
                 </tr>
               </tbody>
             </table>
@@ -71,13 +71,13 @@ class App extends Component {
 
         <div className="contents">
           { this.state.isActive[0].active && <About/> }
-          { this.state.isActive[1].active && <Work/> }
-          { this.state.isActive[2].active && <Project/> }
-          { this.state.isActive[3].active && <Blog/> }
-          { this.state.isActive[4].active && <Activity/> }
-          { this.state.isActive[5].active && <Skills/> }
-          { this.state.isActive[6].active && <Education/> }
-          { this.state.isActive[7].active && <Awards/> }
+          { this.state.isActive[1].active && <JavaScript/> }
+          { this.state.isActive[2].active && <ES2015/> }
+          { this.state.isActive[3].active && <VueJS/> }
+          { this.state.isActive[4].active && <ReactJS/> }
+          { this.state.isActive[5].active && <NodeJS/> }
+          { this.state.isActive[6].active && <MongoDB/> }
+          { this.state.isActive[7].active && <Etc/> }
         </div>
 
         

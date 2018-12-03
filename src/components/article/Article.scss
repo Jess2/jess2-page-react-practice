@@ -1,0 +1,24 @@
+.article {
+  padding: 50px;
+
+  h1 {
+    text-align: left;
+    margin: 0;
+    color: orange;
+  }
+
+  p {
+    color: orange;
+    margin: 0;
+    text-align: left;
+  }
+
+  div {
+    text-align: left;
+    padding-top: 20px;
+    white-space: nowrap;
+    height: auto;
+    overflow:hidden;
+		height:100%;
+  }
+}

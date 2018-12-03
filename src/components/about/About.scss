@@ -55,7 +55,7 @@
 
         thead {
           font-size: 1.1em;
-          background: orange;
+          background: linear-gradient(to right, rgb(255, 179, 0), white);
           color: white;
           font-weight: bold;
 
@@ -147,6 +147,19 @@
 
       .fa-stack-overflow {
         color: orange;
+      }
+
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      #svg {
+        height: auto;
+        stroke-dasharray: 900;
+        stroke-dashoffset: 900;
+        animation: dash 3s 1s infinite;
       }
     }
 
