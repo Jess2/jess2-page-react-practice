@@ -26,7 +26,7 @@ class App extends Component {
   // active 값이 true이면, 새 객체를 만들고 기존의 내용을 집어넣고 원하는 값 덮어쓰기
   // 바꿀 필요 없는 것들은 그냥 기존 값 사용
   setActive = async (e) => {
-    let _id =e.target.id;
+    let _id = parseInt(e.target.id);
     await this.setState({
       isActive: this.state.isActive.map(
         data => data.active === true ? {...data, active: false} : data
@@ -34,7 +34,7 @@ class App extends Component {
     });
     await this.setState({
       isActive: this.state.isActive.map(
-        data => data.id == _id ? {...data, active: true} : data
+        data => data.id === _id ? {...data, active: true} : data
       )
     });
   }
@@ -42,7 +42,9 @@ class App extends Component {
     return (
       <Fragment>
       <div className="App">
-        <a href="#" className="top"><button><i className="fa fa-arrow-up" aria-hidden="true"></i></button></a>
+        <a href="#" className="top">
+          <button><i className="fa fa-arrow-up" aria-hidden="true"></i></button>
+        </a>
         <div className="header">
           <div className="headerBody">
             <Typing>

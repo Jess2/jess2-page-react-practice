@@ -124,8 +124,8 @@ export default class About extends Component {
   }
   render() {
     const skills = this.state.skills.map(
-      ({name, score}) => (
-        <tr>
+      ({name, score}, i) => (
+        <tr key={i}>
           <td>{name}</td>
           <td>
           {"■".repeat(score)}
@@ -135,17 +135,17 @@ export default class About extends Component {
       )
     );
     const experiences = this.state.experiences.map(
-      ({text}) => (
-        <li>{text}</li>
+      ({text}, i) => (
+        <li key={i}>{text}</li>
       )
     )
     const projects = this.state.projects.map(
-      ({title, duration, linkName, role, text, stacks}) => (
-        <table className="projects">
+      ({title, duration, linkName, role, text, stacks}, i) => (
+        <table className="projects" key={i}>
           <thead>
             <tr>
               <td>
-                {stacks.map(stack => <img src={stack}/>)}
+                {stacks.map((stack, i) => <img src={stack} key={i} alt=""/>)}
               </td>
             </tr>
           </thead>
@@ -166,8 +166,8 @@ export default class About extends Component {
       )
     )
     const educations = this.state.educations.map(
-      ({title, duration}) => (
-        <table className="simpleTable">
+      ({title, duration}, i) => (
+        <table className="simpleTable" key={i}>
           <tbody>
             <tr>
               <td>{title}</td>
@@ -178,8 +178,8 @@ export default class About extends Component {
       )
     )
     const awards = this.state.awards.map(
-      ({title, date}) => (
-        <table className="simpleTable">
+      ({title, date}, i) => (
+        <table className="simpleTable" key={i}>
           <tbody>
             <tr>
               <td>{title}</td>
@@ -190,13 +190,13 @@ export default class About extends Component {
       )
     )
     const interestTags = this.state.interestTags.map(
-      ({title}) => (
-        <span className="interestTags">{title}</span>
+      ({title}, i) => (
+        <span className="interestTags" key={i}>{title}</span>
       )
     )
     const works = this.state.works.map(
-      ({title, period, position, description}) => (
-        <table className="works">
+      ({title, period, position, description}, i) => (
+        <table className="works" key={i}>
           <thead>
             <tr>
               <td colSpan="2">{title}</td>
@@ -222,7 +222,7 @@ export default class About extends Component {
     return (
       <div className="About">
         <div className="AboutContents">
-          <img src={require("assets/image/photo.jpg")}/>
+          <img src={require("assets/image/photo.jpg")} alt=""/>
           <div className="text">
              <h2>{this.state.introduce.name}</h2>
              <li>{this.state.introduce.birth}</li>
@@ -236,12 +236,12 @@ export default class About extends Component {
             <br/><hr/>
 
             <h4>CONTACTS</h4>
-            <a href="mailto:jess2.jsy@gmail.com" target="_blank"><i className="fa fa-envelope"></i></a>
-            <a href="https://www.facebook.com/jesssss2" target="_blank"><i className="fa fa-facebook-square"></i></a>
-            <a href="https://www.instagram.com/je_ss2" target="_blank"><i className="fa fa-instagram"></i></a>
-            <a href="https://github.com/jess2" target="_blank"><i className="fa fa-github"></i></a>
-            <a href="https://bitbucket.org/jessie3578" target="_blank"><i className="fa fa-bitbucket"></i></a>
-            <a href="https://stackoverflow.com/users/10725519/jess2?tab=profile" target="_blank"><i className="fa fa-stack-overflow"></i></a>
+            <a href="mailto:jess2.jsy@gmail.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-envelope"></i></a>
+            <a href="https://www.facebook.com/jesssss2" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/je_ss2" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></a>
+            <a href="https://github.com/jess2" target="_blank" rel="noopener noreferrer"><i className="fa fa-github"></i></a>
+            <a href="https://bitbucket.org/jessie3578" target="_blank" rel="noopener noreferrer"><i className="fa fa-bitbucket"></i></a>
+            <a href="https://stackoverflow.com/users/10725519/jess2?tab=profile" target="_blank" rel="noopener noreferrer"><i className="fa fa-stack-overflow"></i></a>
             <br/><br/><hr/>
 
             <h4>EXPERIENCES</h4>
