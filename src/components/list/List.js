@@ -41,12 +41,61 @@ export default class List extends Component {
         title: "여섯 번째 글",
         date: "2018-12-11",
       },
+      {
+        id: 7,
+        title: "일곱 번째 글",
+        date: "2018-12-11",
+      },
+      {
+        id: 8,
+        title: "8 번째 글",
+        date: "2018-12-11",
+      },
+      {
+        id: 9,
+        title: "9 번째 글",
+        date: "2018-12-11",
+      },
+      {
+        id: 10,
+        title: "10 번째 글",
+        date: "2018-12-11",
+      },
+      {
+        id: 11,
+        title: "11 번째 글",
+        date: "2018-12-11",
+      },
+      {
+        id: 12,
+        title: "12 번째 글",
+        date: "2018-12-11",
+      },
+      {
+        id: 13,
+        title: "13 번째 글",
+        date: "2018-12-11",
+      },
+      {
+        id: 14,
+        title: "14 번째 글",
+        date: "2018-12-11",
+      },
+      {
+        id: 15,
+        title: "15 번째 글",
+        date: "2018-12-11",
+      },
     ]
   }
-  componentDidMount () {
-    this.setState({
+  componentDidMount = async () => {
+    await this.setState({
       pageLength: this.state.articles.length / this.state.articleLengthPerPage
     })
+    await this.setState({
+      articles: this.state.articles.reverse()
+    })
+    await this.setCurrentPage(0)
   }
   modeChange = (e) => {
     this.state.articleId = e.target.id;
@@ -54,17 +103,19 @@ export default class List extends Component {
       readMode: !this.state.readMode
     })
   }
-  setCurrentPage = async (id) => {
-    console.log('id', id);
-    await this.setState({
-      currentShowArticles: []
-    })
-    await this.setState({
+  // reverseArticle = () => {
+  //   this.setState({
+  //     this.state.article.reverse()
+  //   })
+  // }
+  setCurrentPage = (id) => {
+    console.log('setCurrentPage', id, typeof id)
+    this.setState({
       currentShowArticles: [ ...this.state.articles.slice(parseInt(id)*this.state.articleLengthPerPage, this.state.articleLengthPerPage*(parseInt(id)+1)) ]
     })
   }
   render() {
-    const articles = this.state.currentShowArticles.reverse().map(
+    const articles = this.state.currentShowArticles.map(
       ({id, title, date}, i) => (
         <li id={id} onClick={this.modeChange} key={i}>
           <span className="liNumber">{id}</span>
@@ -79,7 +130,7 @@ export default class List extends Component {
           this.state.readMode === false ?
             <div className="List">
               <h1>JavaScript</h1>
-              <p>게시물 수: {articles.length}</p>
+              <p>게시물 수: {this.state.articles.length}</p>
               <ul>
                 {articles}
               </ul>
