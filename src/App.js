@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import './App.scss';
 import Typing from 'react-typing-animation';
 import About from './components/about/About';
-import JavaScript from './components/es5/JavaScript';
+import List from './components/list/List';
 import ES2015 from './components/es6/ES2015';
 import VueJS from './components/vueJS/VueJS';
 import ReactJS from './components/react/ReactJS';
@@ -73,7 +73,7 @@ class App extends Component {
 
         <div className="contents">
           { this.state.isActive[0].active && <About/> }
-          { this.state.isActive[1].active && <JavaScript/> }
+          { this.state.isActive[1].active && <List/> }
           { this.state.isActive[2].active && <ES2015/> }
           { this.state.isActive[3].active && <VueJS/> }
           { this.state.isActive[4].active && <ReactJS/> }

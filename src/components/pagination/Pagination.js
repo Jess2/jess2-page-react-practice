@@ -3,15 +3,18 @@ import './Pagination.scss';
 
 export default class Pagination extends Component {
   state = {
-    paginationRange: 5,
     isActivePage: false,
+  }
+  componentDidMount() {
+    console.log('componentDidMount')
+    this.props.setCurrentPage(0)
   }
   paginator = () => {
     let table = []
     for (let i=0; i<1; i++) {
       let children = []
-      for (let j=0; j<this.state.paginationRange; j++) {
-        children.push(<td onClick={this.pageActive}>{`${j+1}`}</td>)
+      for (let j=0; j<this.props.pageLength; j++) {
+        children.push(<td id={j} onClick={this.pageActive} className={`${j === 0 && 'activePagination'}`}>{`${j+1}`}</td>)
       }
       children.push(<td onClick={this.nextPage}>></td>)
       table.push(<tr>{children}</tr>)
@@ -19,6 +22,7 @@ export default class Pagination extends Component {
     return table
   }
   pageActive = (e) => {
+    this.props.setCurrentPage(e.target.id)
     for (let i=0; i<e.target.parentNode.children.length; i++) {
       e.target.parentNode.children[i].className = ''
     }
@@ -28,7 +32,7 @@ export default class Pagination extends Component {
     })
   }
   nextPage = (e) => {
-    for (let i=0; i<e.target.parentNode.children.length-1; i++) {
+    for (let i=0; i<e.target.parentNode.children.length-2; i++) {
       if (e.target.parentNode.children[i].className === 'activePagination') {
         e.target.parentNode.children[i].className = ''
         e.target.parentNode.children[i+1].className = 'activePagination'
