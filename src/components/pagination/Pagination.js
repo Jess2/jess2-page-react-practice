@@ -6,8 +6,7 @@ export default class Pagination extends Component {
     // isActivePage: false,
   }
   componentDidMount() {
-    console.log('componentDidMount')
-    // this.props.setCurrentPage(0)
+    console.log('pagination componentDidMount')
   }
   paginator = () => {
     let table = []
@@ -30,9 +29,7 @@ export default class Pagination extends Component {
     e.target.className = 'activePagination'
   }
   prevPage = (e) => {
-    console.log('이전 페이지로 이동')
     for (let i=2; i<e.target.parentNode.children.length; i++) {
-      console.log(e.target.parentNode.children[i])
       if (e.target.parentNode.children[i].className === 'activePagination') {
         e.target.parentNode.children[i].className = ''
         e.target.parentNode.children[i-1].className = 'activePagination'

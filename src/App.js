@@ -9,7 +9,6 @@ import ReactJS from './components/react/ReactJS';
 import NodeJS from './components/node/NodeJS';
 import MongoDB from './components/mongo/MongoDB';
 import Etc from './components/etc/Etc';
-
 class App extends Component {
   state = {
     isActive: [
