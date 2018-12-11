@@ -1,0 +1,28 @@
+.paginationWrapper {
+  width: 100%;
+  margin-top: 70px;
+
+  table.pagination {
+    border-collapse: collapse;
+    background: rgb(255, 235, 198);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto;
+
+    tr td {
+      width: 35px;
+      height: 35px;
+      border-right: 1px solid orange;
+      cursor: pointer;
+    }
+
+    tr td:last-child {
+      border-right: none;
+    }
+
+    tr td.activePagination {
+      background: orange;
+      // color: white;
+    }
+  }
+}

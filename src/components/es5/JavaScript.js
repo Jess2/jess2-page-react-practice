@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './JavaScript.scss';
 import Article from 'components/article/Article';
+import Pagination from 'components/pagination/Pagination';
 
 export default class JavaScript extends Component {
   state = {
@@ -54,33 +55,19 @@ export default class JavaScript extends Component {
       <div>
         {
           this.state.readMode === false ?
-          <div className="JavaScript">
-          <h1>JavaScript</h1>
-          <p>게시물 수: {articles.length}</p>
-          <ul>
-            {articles}
-          </ul>
-  
-          <div className="paginationWrapper">
-            <table className="pagination">
-              <tbody>
-                <tr>
-                  <td className="activePagination">1</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                  <td>5</td>
-                  <td>></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        :
-        <Article
-          onArticleId={this.state.articleId}
-          onModeChange={this.modeChange}
-        />
+            <div className="JavaScript">
+              <h1>JavaScript</h1>
+              <p>게시물 수: {articles.length}</p>
+              <ul>
+                {articles}
+              </ul>
+              <Pagination/>
+            </div>
+          :
+          <Article
+            onArticleId={this.state.articleId}
+            onModeChange={this.modeChange}
+          />
         }
       </div>
     );
