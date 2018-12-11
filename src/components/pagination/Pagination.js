@@ -36,6 +36,7 @@ export default class Pagination extends Component {
       if (e.target.parentNode.children[i].className === 'activePagination') {
         e.target.parentNode.children[i].className = ''
         e.target.parentNode.children[i+1].className = 'activePagination'
+        this.props.setCurrentPage(e.target.parentNode.children[i+1].id)
         break;
       }
     }
