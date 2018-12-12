@@ -19,24 +19,24 @@
     
     li {
       text-align: left;
-      padding: 8px 0;
+      padding: 8px 10px;
       border-bottom: 1px solid lightgray;
       cursor: pointer;
 
       span.liNumber {
         font-weight: bold;
         padding-right: 10px;
-        padding-left: 5px;
+        // padding-left: 5px;
       }
 
       span.liDate {
         float: right;
-        padding-right: 5px;
+        // padding-right: 5px;
       }
     }
 
     li:hover {
-      background: rgb(255, 235, 198);
+      background: rgb(240, 240, 240);
     }
   }
 }

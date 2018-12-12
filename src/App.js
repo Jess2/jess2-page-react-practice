@@ -3,12 +3,6 @@ import './App.scss';
 import Typing from 'react-typing-animation';
 import About from './components/about/About';
 import List from './components/list/List';
-import ES2015 from './components/es6/ES2015';
-import VueJS from './components/vueJS/VueJS';
-import ReactJS from './components/react/ReactJS';
-import NodeJS from './components/node/NodeJS';
-import MongoDB from './components/mongo/MongoDB';
-import Etc from './components/etc/Etc';
 class App extends Component {
   state = {
     themeId: 1,
@@ -77,13 +71,6 @@ class App extends Component {
 
         <div className="contents">
           { this.state.isActive[0].active ? <About/> : <List themeId={this.state.themeId}/>}
-          {/* { this.state.isActive[1].active && <List themeId={this.state.themeId}/> }
-          { this.state.isActive[2].active && <ES2015/> }
-          { this.state.isActive[3].active && <VueJS/> }
-          { this.state.isActive[4].active && <ReactJS/> }
-          { this.state.isActive[5].active && <NodeJS/> }
-          { this.state.isActive[6].active && <MongoDB/> }
-          { this.state.isActive[7].active && <Etc/> } */}
         </div>
 
         

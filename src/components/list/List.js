@@ -31,7 +31,10 @@ export default class List extends Component {
       console.log('componentDidUpdate')
       await this.setState({
         ...this.state,
-        themeArticles: this.state.articles.filter(data => data.themeId == this.props.themeId).reverse(),
+        themeArticles: this.state.articles.filter(data => data.themeId == this.props.themeId).reverse()
+      })
+      await this.setState({
+        ...this.state,
         pageLength: this.state.themeArticles.length / this.state.articleLengthPerPage
       })
       await this.setCurrentPage(this.state.currentPage)
