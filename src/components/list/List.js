@@ -10,7 +10,7 @@ export default class List extends Component {
     readMode: false,
     articleId: 0,
     pageLength: 0,
-    articleLengthPerPage: 5, // 한 페이지당 게시물 몇 개씩 보여줄지
+    articleLengthPerPage: 3, // 한 페이지당 게시물 몇 개씩 보여줄지
     currentShowArticles: [],
     currentPage: 0,
     articles: articleData,
@@ -52,7 +52,6 @@ export default class List extends Component {
     })
   }
   render() {
-    // .filter(data => data.themeId === this.props.themeId)
     const articles = this.state.currentShowArticles.map(
       ({id, title, date}, i) => (
         <li id={id} onClick={this.modeChange} key={i}>

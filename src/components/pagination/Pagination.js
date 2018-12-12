@@ -8,15 +8,18 @@ export default class Pagination extends Component {
   componentDidMount() {
     console.log('pagination componentDidMount')
   }
+  componentDidUpdate() {
+    console.log('pagination ComponentDidUpdate')
+  }
   paginator = () => {
     let table = []
     for (let i=0; i<1; i++) {
       let children = []
-      children.push(<td onClick={this.prevPage}>＜</td>)
+      children.push(<td onClick={this.prevPage}><i className="fa fa-angle-left" aria-hidden="true"></i></td>)
       for (let j=0; j<this.props.pageLength; j++) {
         children.push(<td id={j} onClick={this.pageActive} className={`${j === 0 && 'activePagination'}`}>{`${j+1}`}</td>)
       }
-      children.push(<td onClick={this.nextPage}>＞</td>)
+      children.push(<td onClick={this.nextPage}><i className="fa fa-angle-right" aria-hidden="true"></i></td>)
       table.push(<tr>{children}</tr>)
     }
     return table
