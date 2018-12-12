@@ -11,6 +11,7 @@ import MongoDB from './components/mongo/MongoDB';
 import Etc from './components/etc/Etc';
 class App extends Component {
   state = {
+    themeId: 1,
     isActive: [
       { id: 0, active: true },
       { id: 1, active: false },
@@ -25,7 +26,11 @@ class App extends Component {
   // active 값이 true이면, 새 객체를 만들고 기존의 내용을 집어넣고 원하는 값 덮어쓰기
   // 바꿀 필요 없는 것들은 그냥 기존 값 사용
   setActive = async (e) => {
+    console.log('e', e.target.id)
     let _id = parseInt(e.target.id);
+    await this.setState({
+      themeId: _id
+    })
     await this.setState({
       isActive: this.state.isActive.map(
         data => data.active === true ? {...data, active: false} : data
@@ -71,14 +76,14 @@ class App extends Component {
         </div>
 
         <div className="contents">
-          { this.state.isActive[0].active && <About/> }
-          { this.state.isActive[1].active && <List/> }
+          { this.state.isActive[0].active ? <About/> : <List themeId={this.state.themeId}/>}
+          {/* { this.state.isActive[1].active && <List themeId={this.state.themeId}/> }
           { this.state.isActive[2].active && <ES2015/> }
           { this.state.isActive[3].active && <VueJS/> }
           { this.state.isActive[4].active && <ReactJS/> }
           { this.state.isActive[5].active && <NodeJS/> }
           { this.state.isActive[6].active && <MongoDB/> }
-          { this.state.isActive[7].active && <Etc/> }
+          { this.state.isActive[7].active && <Etc/> } */}
         </div>
 
         
