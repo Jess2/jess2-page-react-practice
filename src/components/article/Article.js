@@ -8,6 +8,12 @@ export default class Article extends Component {
     contents: "안녕하세요! 테스트 중입니다.",
     articles: articleData,
   }
+  componentDidMount() {
+    console.log('article componentDidMount')
+  }
+  componentDidUpdate() {
+    console.log('article ComponentDidUpdate')
+  }
   render() {
     const article = this.state.articles.filter(article => article.id === parseInt(this.props.onArticleId))
     console.log(article)

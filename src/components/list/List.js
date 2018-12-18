@@ -19,7 +19,7 @@ export default class List extends Component {
   }
   // 처음 마운트될 때 -> 게시판별 게시글 분리, 게시판 게시글별 페이지수 계산
   componentDidMount = async () => {
-    console.log('componentDidMount')
+    console.log('list componentDidMount')
     await this.setState({
       themeArticles: this.state.articles.filter(data => data.themeId == this.props.themeId).reverse()
     })
@@ -31,7 +31,11 @@ export default class List extends Component {
   // 업데이트 될 때 -> 게시판 아이디가 달라질 경우, 게시판별 게시글 다시 분리, 게시판 게시글별 페이지수 다시 계산
   componentDidUpdate = async (prevProps, prevState) => {
     if (this.props.themeId !== prevProps.themeId) {
-      console.log('componentDidUpdate')
+      console.log('list componentDidUpdate')
+      await this.setState({
+        readMode: false,
+        writeMode: false
+      })
       await this.setState({
         ...this.state,
         themeArticles: this.state.articles.filter(data => data.themeId == this.props.themeId).reverse()
@@ -95,6 +99,8 @@ export default class List extends Component {
             if (this.state.writeMode) {
               return (
                 <Write
+                  themeId={this.props.themeId}
+                  themeName={this.props.themeName}
                   onModeChange={this.writeModeChange}
                 />
               )
