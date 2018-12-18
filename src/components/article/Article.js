@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './Article.scss';
-
 import articleData from '../../utilities/articleData.json';
+
 
 export default class Article extends Component {
   state = {
     contents: "안녕하세요! 테스트 중입니다.",
-    articles: articleData
+    articles: articleData,
   }
   render() {
     const article = this.state.articles.filter(article => article.id === parseInt(this.props.onArticleId))
@@ -24,3 +24,10 @@ export default class Article extends Component {
     );
   }
 }
+
+// const input = '# This is a header\n\nAnd this is a paragraph'
+ 
+// ReactDOM.render(
+//   <ReactMarkdown source={input} />,
+//   document.getElementById('container')
+// )

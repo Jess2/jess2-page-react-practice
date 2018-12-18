@@ -73,14 +73,7 @@ class App extends Component {
 
         <div className="contents">
           {
-            this.state.isActive[0].active
-            ?
-            <About/>
-            :
-            <List
-              themeId={this.state.themeId}
-              themeName={this.state.themeName}
-            />
+            this.state.isActive[0].active ? <About/> : <List themeId={this.state.themeId} themeName={this.state.themeName} />
           }
         </div>
 
