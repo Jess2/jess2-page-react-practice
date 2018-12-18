@@ -68,7 +68,7 @@ export default class About extends Component {
         title: "Wizard's Chess",
         duration: "2017-09 ~ 2017-12",
         linkName: "",
-        role: "Backend Developer / 3D Modeling",
+        role: "Developer / 3D Modeling",
         text: "사물인터넷(Internet of Things, IoT) 기술을 이용한 마법사 체스입니다. 음성인식기술을 이용하여 라즈베리파이에 명령을 주면 체스말이 이동하게 되는 시스템이며 체스말과 체스보드 등 기타 하드웨어 부품들을 3D Modeling하여 구축하였습니다. 서버 환경설정은 Node.js를 이용하였습니다.",
         stacks: [nodeImg, iotImg]
       },
@@ -84,7 +84,7 @@ export default class About extends Component {
         title: "Jess2 Blog",
         duration: "2018-11 ~ 2018-12",
         linkName: "Github",
-        role: "Developer / Designer",
+        role: "Frontend Developer / Designer",
         text: "준비중입니다.",
         stacks: [htmlImg, cssImg, sassImg, jsImg, reactImg]
       }

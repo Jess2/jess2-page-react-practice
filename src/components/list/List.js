@@ -16,6 +16,7 @@ export default class List extends Component {
     articles: articleData,
     themeArticles: articleData,
   }
+  // 처음 마운트될 때 -> 게시판별 게시글 분리, 게시판 게시글별 페이지수 계산
   componentDidMount = async () => {
     console.log('componentDidMount')
     await this.setState({
@@ -26,6 +27,7 @@ export default class List extends Component {
     })
     await this.setCurrentPage(this.state.currentPage)
   }
+  // 업데이트 될 때 -> 게시판 아이디가 달라질 경우, 게시판별 게시글 다시 분리, 게시판 게시글별 페이지수 다시 계산
   componentDidUpdate = async (prevProps, prevState) => {
     if (this.props.themeId !== prevProps.themeId) {
       console.log('componentDidUpdate')
@@ -40,12 +42,14 @@ export default class List extends Component {
       await this.setCurrentPage(this.state.currentPage)
     }
   }
+  // 게시글 리스트 모드, 읽기 모드 변경
   modeChange = (e) => {
     this.state.articleId = e.target.id;
     this.setState({
       readMode: !this.state.readMode
     })
   }
+  // 현재 보여줄 게시글 목록 계산
   setCurrentPage = (id) => {
     this.setState({
       currentShowArticles: [ ...this.state.themeArticles.slice(parseInt(id)*this.state.articleLengthPerPage, this.state.articleLengthPerPage*(parseInt(id)+1)) ]
@@ -66,7 +70,7 @@ export default class List extends Component {
         {
           this.state.readMode === false ?
             <div className="List">
-              <h1>JavaScript</h1>
+              <h1>{this.props.themeName}</h1>
               <p>게시물 수: {this.state.themeArticles.length}</p>
               <ul>
                 {articles}

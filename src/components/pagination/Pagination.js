@@ -10,8 +10,11 @@ export default class Pagination extends Component {
   }
   componentDidUpdate() {
     console.log('pagination ComponentDidUpdate')
+
+    // this.props.setCurrentPage(0)
   }
   paginator = () => {
+    console.log('==================paginator')
     let table = []
     for (let i=0; i<1; i++) {
       let children = []
@@ -22,15 +25,18 @@ export default class Pagination extends Component {
       children.push(<td onClick={this.nextPage}><i className="fa fa-angle-right" aria-hidden="true"></i></td>)
       table.push(<tr>{children}</tr>)
     }
+    console.log(table)
     return table
   }
   pageActive = (e) => {
+    console.log(e.target.id)
     this.props.setCurrentPage(e.target.id)
     for (let i=0; i<e.target.parentNode.children.length; i++) {
       e.target.parentNode.children[i].className = ''
     }
     e.target.className = 'activePagination'
   }
+  // 이전 페이지로 이동
   prevPage = (e) => {
     for (let i=2; i<e.target.parentNode.children.length; i++) {
       if (e.target.parentNode.children[i].className === 'activePagination') {
@@ -41,6 +47,7 @@ export default class Pagination extends Component {
       }
     }
   }
+  // 다음 페이지로 이동
   nextPage = (e) => {
     for (let i=0; i<e.target.parentNode.children.length-2; i++) {
       if (e.target.parentNode.children[i].className === 'activePagination') {
