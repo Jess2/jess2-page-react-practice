@@ -13,6 +13,7 @@
     font-size: 1em;
     cursor: pointer;
     margin: 5px;
+    margin-top: 30px;
   }
 
   button:hover {
@@ -30,25 +31,65 @@
     color: white;
   }
 
-  textarea {
-    width: 40%;
-    height: 350px;
+  .writeSection {
+    float: left;
+    width: calc(50% - 30px);
+    margin: 0 10px 0 20px;
+    height: 800px;
+    border: 1px solid gray;
+
+    h4 {
+      color: orange;
+    }
+
+    textarea {
+      width: 100%;
+      height: 700px;
+      resize: none;
+      border: none;
+      padding: 0 10px;
+    }
+
+    textarea:hover,
+    textarea:focus,
+    textarea:active {
+      outline: 0px !important;
+      -webkit-appearance: none;
+    }
   }
 
-  .markdownWrapper {
-    width: 60%;
+  .markdownSection {
+    width: calc(50% - 30px);
+    height: 800px;
+    border: 1px solid gray;
+    margin: 0 20px 0 10px;
     float: right;
     display: inline-block;
+    text-align: left;
 
-    table {
-      width: calc(100% - 20px);
-      margin: 0 10px;
+    h4 {
+      color: orange;
+      text-align: center;
+      padding: 0;
+    }
 
-      thead {
-        background: orange;
+    .preview {
+      padding: 0 10px;
+
+      h4 {
+        color: black;
+        text-align: left;
       }
-      tbody {
-        background: rgb(255, 240, 211);
+
+      table {
+        width: 100%;
+  
+        thead {
+          background: orange;
+        }
+        tbody {
+          background: rgb(255, 240, 211);
+        }
       }
     }
   }

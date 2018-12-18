@@ -21,7 +21,7 @@ export default class List extends Component {
   componentDidMount = async () => {
     console.log('list componentDidMount')
     await this.setState({
-      themeArticles: this.state.articles.filter(data => data.themeId == this.props.themeId).reverse()
+      themeArticles: this.state.articles.filter(data => data.themeId === this.props.themeId).reverse()
     })
     await this.setState({
       pageLength: this.state.themeArticles.length / this.state.articleLengthPerPage
@@ -38,7 +38,7 @@ export default class List extends Component {
       })
       await this.setState({
         ...this.state,
-        themeArticles: this.state.articles.filter(data => data.themeId == this.props.themeId).reverse()
+        themeArticles: this.state.articles.filter(data => data.themeId === this.props.themeId).reverse()
       })
       await this.setState({
         ...this.state,

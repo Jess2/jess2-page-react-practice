@@ -70,14 +70,11 @@ class App extends Component {
             </table>
           </nav>
         </div>
-
         <div className="contents">
           {
             this.state.isActive[0].active ? <About/> : <List themeId={this.state.themeId} themeName={this.state.themeName} />
           }
         </div>
-
-        
       </div>
       <div className="footer">
         Copyright Jess2

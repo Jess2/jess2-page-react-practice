@@ -22,18 +22,23 @@ export default class Pagination extends Component {
   render() {
     return (
       <div className="writeWrapper">
-        <h1 className="themeName">{this.props.themeName}</h1>
+        <h1 className="themeName">{this.props.themeName} 글쓰기</h1>
 
         {/* 글 작성 */}
-        <textarea
-          value={this.state.contents}
-          onChange={this.contentsChange}
-        />
+        <div className="writeSection">
+          <h4>Markdown</h4><hr/>
+          <textarea
+            value={this.state.contents}
+            onChange={this.contentsChange}
+          />
+        </div>
 
         {/* 글 작성 미리보기 */}
-        <div className="markdownWrapper">
-          <h2>미리보기</h2>
-          <ReactMarkdown source={this.state.contents} />
+        <div className="markdownSection">
+          <h4>Preview</h4><hr/>
+          <div className="preview">
+            <ReactMarkdown source={this.state.contents} />
+          </div>
         </div>
         <br/>
         <button className="cancel" onClick={this.props.onModeChange}>취소</button>
