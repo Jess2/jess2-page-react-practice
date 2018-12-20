@@ -122,6 +122,14 @@ export default class About extends Component {
       description: "새로운 기술을 익히는 것에 즐거움을 느끼며 사람들과 소통하는 것을 좋아하는 프론트엔드 개발자입니다.",
     },
   }
+  componentDidMount() {
+    console.log('about componentDidMount')
+    window.scrollTo(0,0);
+  }
+  componentDidUpdate() {
+    console.log('about ComponentDidUpdate')
+    window.scrollTo(0,0);
+  }
   render() {
     const skills = this.state.skills.map(
       ({name, score}, i) => (

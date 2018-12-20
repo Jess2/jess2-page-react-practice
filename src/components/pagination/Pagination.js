@@ -7,9 +7,11 @@ export default class Pagination extends Component {
   }
   componentDidMount() {
     console.log('pagination componentDidMount')
+    window.scrollTo(0,0);
   }
   componentDidUpdate() {
     console.log('pagination ComponentDidUpdate')
+    window.scrollTo(0,0);
 
     // this.props.setCurrentPage(0)
   }

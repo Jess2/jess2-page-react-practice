@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './List.scss';
 import Article from 'components/article/Article';
 import Pagination from 'components/pagination/Pagination';
@@ -20,6 +21,7 @@ export default class List extends Component {
   // 처음 마운트될 때 -> 게시판별 게시글 분리, 게시판 게시글별 페이지수 계산
   componentDidMount = async () => {
     console.log('list componentDidMount')
+    window.scrollTo(0,0);
     await this.setState({
       themeArticles: this.state.articles.filter(data => data.themeId === this.props.themeId).reverse()
     })
@@ -32,6 +34,8 @@ export default class List extends Component {
   componentDidUpdate = async (prevProps, prevState) => {
     if (this.props.themeId !== prevProps.themeId) {
       console.log('list componentDidUpdate')
+      window.scrollTo(0,0);
+      ReactDOM.findDOMNode(this).scrollTop = 0;
       await this.setState({
         readMode: false,
         writeMode: false

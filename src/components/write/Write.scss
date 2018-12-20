@@ -1,15 +1,24 @@
 .writeWrapper {
+  text-align: left;
+  margin: 0 20px;
+
+  button {
+    float: right;
+  }
+
   h1.themeName {
     color: orange;
+    display: inline-block;
+    text-align: left;
   }
 
   button {
     background: white;
-    border: 4px solid orange;
+    border: 2px solid orange;
     padding: 5px 15px;
     color: orange;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 20px;
     font-size: 1em;
     cursor: pointer;
     margin: 5px;
@@ -22,32 +31,67 @@
   }
 
   button.cancel {
-    border: 4px solid lightgray;
-    color: lightgray;
+    border: 2px solid gray;
+    color: gray;
   }
 
   button.cancel:hover {
-    background: lightgray;
+    background: gray;
     color: white;
+  }
+
+  button:focus, button:active {
+    outline: none;
+  }
+
+  .changeSectionButton {
+    float: left;
+    width: 100%;
+
+    button {
+      float: left;
+      border: none;
+      margin: 0;
+      padding: 0 20px 10px 0;
+      color: gray;
+    }
+
+    button:hover {
+      background: none;
+      color: orange;
+    }
   }
 
   .writeSection {
     float: left;
-    width: calc(50% - 30px);
-    margin: 0 10px 0 20px;
+    width: calc(50% - 10px);
+    margin: 0 10px 0 0;
     height: 800px;
-    border: 1px solid gray;
+    border: 3px solid gray;
+    border-radius: 15px 15px 0 0;
 
-    h4 {
-      color: orange;
+    .writeHeader {
+      text-align: center;
+      background: gray;
+      border-radius: 10px 10px 0 0;
+      height: 24px;
+
+      h4 {
+        color: white;
+        padding: 0;
+        display: inline-block;
+        margin: 0;
+      }
     }
+
 
     textarea {
       width: 100%;
-      height: 700px;
+      height: 800px - 30px;
       resize: none;
       border: none;
-      padding: 0 10px;
+      padding: 10px;
+      overflow-y: scroll;
     }
 
     textarea:hover,
@@ -59,22 +103,41 @@
   }
 
   .markdownSection {
-    width: calc(50% - 30px);
+    width: calc(50% - 10px);
     height: 800px;
-    border: 1px solid gray;
-    margin: 0 20px 0 10px;
+    border: 3px solid gray;
+    margin: 0 0 0 10px;
     float: right;
     display: inline-block;
     text-align: left;
+    border-radius: 15px 15px 0 0;
 
-    h4 {
-      color: orange;
+    .markdownHeader {
       text-align: center;
-      padding: 0;
-    }
+      // border-bottom: 1px solid gray;
+      background: gray;
+      border-radius: 10px 10px 0 0;
 
+      h4 {
+        color: white;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        // margin-left: 67.45px;
+        display: inline-block;
+      }
+  
+      h5 {
+        z-index: 1;
+        margin: 0;
+        float: right;
+        display: inline-block;
+      }
+    }
     .preview {
-      padding: 0 10px;
+      padding: 10px;
+      overflow-y: scroll;
+      height: 800px - 30px;
 
       h4 {
         color: black;
@@ -92,5 +155,59 @@
         }
       }
     }
+  }
+
+  .writeSection.markdownClass {
+    transition-property: width;
+    transition-duration: 1s;
+    // transition-delay: 1s;
+    width: 100%;
+    margin: 0;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+  }
+
+  .markdownSection.markdownClass {
+    display: none;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+  }
+
+  .writeSection.previewClass {
+    display: none;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+  }
+
+  .markdownSection.previewClass {
+    transition-property: width;
+    transition-duration: 1s;
+    width: 100%;
+    margin: 0;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+  }
+
+  .writeSection.originClass {
+    width: calc(50% - 10px);
+    margin: 0 10px 0 0;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+  }
+
+  .markdownSection.originClass {
+    width: calc(50% - 10px);
+    margin: 0 0 0 10px;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+  }
+
+  .buttonWrapper {
+    display: block;
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 }
