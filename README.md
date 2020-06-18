@@ -1,6 +1,6 @@
-# jess2page
+# jess2-page
 
-> 개인 페이지
+> React.js를 이용하여 구현한 간단한 개인 페이지 
 
 ## Stack
 - React.js
