@@ -29,7 +29,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "node-sass": "^4.10.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1"
   }
